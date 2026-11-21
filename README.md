@@ -1,12 +1,77 @@
+<div align="center">
+
+<img src="windows/packaging/Assets/Square150x150Logo.scale-200.png" alt="CamStudio Pro logo" width="140">
+
 # CamStudio Pro
 
-Stream an Android phone's camera and microphone to a Windows PC over Wi-Fi or USB, record it, and edit video and audio.
+**Turn your Android phone into a pro webcam and streaming studio for Windows.**
+
+Record, go live on YouTube, share your screen, and edit your videos, all with your phone's camera
+and microphone over Wi-Fi or USB. Free, open source, and nothing ever leaves your local network.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Platform](https://img.shields.io/badge/platform-Windows%2011%20%7C%20Android-blue)
+![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
+![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF)
+[![GitHub stars](https://img.shields.io/github/stars/zeeshantanveer/CamStudioPro?style=social)](https://github.com/zeeshantanveer/CamStudioPro/stargazers)
+
+[Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Contributing](CONTRIBUTING.md)
+
+</div>
+
+---
+
+## Why CamStudio Pro?
+
+Your phone's camera is almost always better than your laptop's webcam. CamStudio Pro is an
+open-source alternative to closed phone-webcam apps such as DroidCam and Iriun Webcam, with a
+full studio built in: no watermarks, no accounts, no cloud.
+
+## Features
+
+| | |
+|---|---|
+| 📱 **Phone as webcam** | Low-latency H.264 video and 48 kHz audio from your phone over Wi-Fi or USB (`adb`). Auto-discovery, QR pairing, or typed IP. |
+| 🔴 **Go live on YouTube** | Built-in RTMP/RTMPS encoder with adaptive bitrate (240p–1080p) that follows your upload speed. Works with any RTMP service. |
+| 🖥️ **Screen sharing** | Share a screen or window with your camera in a picture-in-picture bubble, live or while recording. |
+| ⏺️ **Recording** | MP4 recording with pause/resume, standby, and auto-reconnect. |
+| ✂️ **Video editor** | Timeline editor (FFmpeg): trim, split, speed, fades, colour, titles, music, and export up to 4K, vertical, or square. Hardware encoding via NVENC, Quick Sync, or AMF. |
+| ✨ **Beauty effects** | Skin smoothing and touch-up, synced live between phone and PC. |
+| 🏞️ **Background replacement** | Blur or swap your background with lighting matching, light wrap, and grain for a natural look. |
+| 🎙️ **Voice enhancement** | Real-time noise suppression (RNNoise) and loudness levelling. |
+| 🔒 **Private by design** | Everything stays on your local network. Stream keys are encrypted for your Windows account. |
+
+## Quick start
+
+**Requirements:** Windows 11, an Android phone, the [.NET 10 SDK](https://dotnet.microsoft.com/download),
+and JDK 17 with Android SDK 35+ for the phone app. FFmpeg is needed for the editor and live streaming.
+
+```powershell
+git clone https://github.com/zeeshantanveer/CamStudioPro.git
+cd CamStudioPro
+
+# Windows app -> windows\dist\CamStudioPro\CamStudioPro.exe
+windowsuild.ps1
+
+# Android app -> androidppuild\outputspk\debugpp-debug.apk
+android\gradlew.bat -p android :app:assembleDebug
+```
+
+Install the APK on your phone, open CamStudio Pro on both devices, and connect by scanning the QR
+code shown on the PC. No phone handy? `windows	oolsake_phone.py` streams a test pattern over
+the real protocol.
 
 ```
 android/   Phone app (Kotlin, Jetpack Compose, CameraX, MediaCodec H.264)
-windows/   PC client (WPF, .NET 10): live preview, recording, video/audio editor (FFmpeg)
-docs/      PROTOCOL.md: the phone â†” PC wire protocol
+windows/   PC client (WPF, .NET 10): live preview, recording, streaming, video/audio editor (FFmpeg)
+docs/      PROTOCOL.md: the phone ↔ PC wire protocol
 ```
+
+## Contributing
+
+Contributions are welcome: bug reports, features, docs, and testing on more phones. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) to get started. If CamStudio Pro is useful to you, please
+**⭐ star the repo**. It helps other people find it.
 
 ## How it works
 
@@ -260,7 +325,7 @@ protocol.
 ## Android app
 
 Build: `android\gradlew.bat :app:assembleDebug` (JDK 17, Android SDK 35+). See
-`android/README.md` for details.
+`android/chairlab/README.md` for the chair-segmentation lab.
 
 ## Production builds
 

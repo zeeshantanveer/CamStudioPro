@@ -1,0 +1,36 @@
+name: Bug report
+description: Something isn't working
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Connect phone over Wi-Fi\n2. Click Go live\n3. ..."
+  - type: input
+    id: phone
+    attributes:
+      label: Phone model and Android version
+      placeholder: Pixel 8, Android 15
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version and CamStudio Pro version
+      placeholder: Windows 11 24H2, CamStudio Pro 1.5.5
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Connection
+      options: [Wi-Fi, USB, Not relevant]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Remove stream keys and personal information before pasting.
