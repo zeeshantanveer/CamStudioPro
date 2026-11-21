@@ -1,21 +1,26 @@
 <div align="center">
 
-<img src="windows/packaging/Assets/Square150x150Logo.scale-200.png" alt="CamStudio Pro logo" width="140">
+<img src="windows/packaging/Assets/Square150x150Logo.scale-200.png" alt="CamStudio Pro logo" width="120">
 
 # CamStudio Pro
 
-**Turn your Android phone into a pro webcam and streaming studio for Windows.**
+### Turn your Android phone into a pro webcam and streaming studio for Windows
 
-Record, go live on YouTube, share your screen, and edit your videos, all with your phone's camera
-and microphone over Wi-Fi or USB. Free, open source, and nothing ever leaves your local network.
+Record, share your screen, go live on YouTube, and edit your videos, all with your phone's camera
+and mic over Wi-Fi or USB.<br>**Free and open source. No watermark, no account, no cloud.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Platform](https://img.shields.io/badge/platform-Windows%2011%20%7C%20Android-blue)
-![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
-![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-7F52FF)
-[![GitHub stars](https://img.shields.io/github/stars/zeeshantanveer/CamStudioPro?style=social)](https://github.com/zeeshantanveer/CamStudioPro/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/zeeshantanveer/CamStudioPro?style=for-the-badge&logo=github&color=f5b301)](https://github.com/zeeshantanveer/CamStudioPro/stargazers)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
+[![Platform](https://img.shields.io/badge/Windows%2011%20%2B%20Android%208%2B-0078D4?style=for-the-badge&logo=windows&logoColor=white)](#quick-start)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge)](CONTRIBUTING.md)
 
-[Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Contributing](CONTRIBUTING.md)
+[**Quick start**](#quick-start) · [**Features**](#features) · [**How it works**](#how-it-works) · [**FAQ**](#faq) · [**Guide**](docs/GUIDE.md) · [**Contribute**](CONTRIBUTING.md)
+
+<br>
+
+<img src="docs/media/demo.gif" alt="CamStudio Pro demo: live 1080p phone camera on Windows, recording, voice enhancement, screen sharing with a camera bubble, video editor, settings and dark theme" width="860">
+
+<sub>Real recording of the Windows app with a Samsung phone over USB: 1080p at 30 fps, about 70 ms delay, 0% dropped frames.</sub>
 
 </div>
 
@@ -23,385 +28,174 @@ and microphone over Wi-Fi or USB. Free, open source, and nothing ever leaves you
 
 ## Why CamStudio Pro?
 
-Your phone's camera is almost always better than your laptop's webcam. CamStudio Pro is an
-open-source alternative to closed phone-webcam apps such as DroidCam and Iriun Webcam, with a
-full studio built in: no watermarks, no accounts, no cloud.
+Your phone's camera is almost always better than your laptop's webcam. Most phone-webcam apps
+(DroidCam, Iriun and similar) are closed source, and some limit HD or add a watermark unless you
+pay. CamStudio Pro is **open source** and goes beyond a plain webcam: it's a small
+**recording and streaming studio**.
+
+- 🎥 **1080p at 30 fps** from your phone's camera, with about 60–70 ms delay over USB
+- 🔴 **Go live on YouTube** (or any RTMP server) straight from the app, with no OBS needed
+- 🖥️ **Share your screen** with your face in a camera bubble
+- ✂️ **Edit** the result in the built-in timeline editor
+- 🔒 **Private by design**: video and audio never leave your local network
+
+> **⭐ If CamStudio Pro is useful to you, please star the repo.** Stars help other people find the project.
 
 ## Features
 
-| | |
-|---|---|
-| 📱 **Phone as webcam** | Low-latency H.264 video and 48 kHz audio from your phone over Wi-Fi or USB (`adb`). Auto-discovery, QR pairing, or typed IP. |
-| 🔴 **Go live on YouTube** | Built-in RTMP/RTMPS encoder with adaptive bitrate (240p–1080p) that follows your upload speed. Works with any RTMP service. |
-| 🖥️ **Screen sharing** | Share a screen or window with your camera in a picture-in-picture bubble, live or while recording. |
-| ⏺️ **Recording** | MP4 recording with pause/resume, standby, and auto-reconnect. |
-| ✂️ **Video editor** | Timeline editor (FFmpeg): trim, split, speed, fades, colour, titles, music, and export up to 4K, vertical, or square. Hardware encoding via NVENC, Quick Sync, or AMF. |
-| ✨ **Beauty effects** | Skin smoothing and touch-up, synced live between phone and PC. |
-| 🏞️ **Background replacement** | Blur or swap your background with lighting matching, light wrap, and grain for a natural look. |
-| 🎙️ **Voice enhancement** | Real-time noise suppression (RNNoise) and loudness levelling. |
-| 🔒 **Private by design** | Everything stays on your local network. Stream keys are encrypted for your Windows account. |
+| | Feature | What you get |
+|:-:|---|---|
+| 📱 | **Phone as webcam** | Low-latency H.264 video and 48 kHz audio over Wi-Fi or USB. Auto-discovery, QR pairing or a typed IP address. |
+| ⏺️ | **Recording** | One-click MP4 recording with pause/resume. Open a recording straight in the editor. |
+| 🔴 | **Live streaming** | Built-in YouTube/RTMP(S) encoder with adaptive bitrate (240p–1080p) that follows your upload speed and reconnects on its own. |
+| 🖥️ | **Screen sharing** | Share a screen or window, with your camera in a round bubble. Works in the preview, recordings and streams. |
+| ✂️ | **Video editor** | Timeline editor powered by FFmpeg: trim, split, speed, fades, colour, titles, music. Export up to 4K, vertical or square, with NVENC, Quick Sync or AMF. |
+| 🎙️ | **Voice enhancement** | Real-time noise suppression (RNNoise) and automatic volume. |
+| ✨ | **Beauty touch-up** | Gentle skin smoothing, controlled from the phone or the PC. |
+| 🏞️ | **Virtual backgrounds** *(beta)* | Blur or replace your background. Being improved; see the [roadmap](#roadmap). |
+| 🌗 | **Light and dark themes** | Follows Windows by default. Can start with Windows and reconnect phones automatically. |
+
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/media/screenshot-screen-share.jpg" alt="Screen sharing with a camera bubble"><p align="center"><b>Screen sharing with a camera bubble</b></p></td>
+    <td width="50%"><img src="docs/media/screenshot-editor.jpg" alt="Built-in video editor"><p align="center"><b>Built-in video editor</b></p></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/media/screenshot-live.jpg" alt="Live 1080p preview with recording and streaming controls"><p align="center"><b>Live 1080p preview</b></p></td>
+    <td width="50%"><img src="docs/media/screenshot-dark.jpg" alt="Dark theme"><p align="center"><b>Dark theme</b></p></td>
+  </tr>
+</table>
 
 ## Quick start
 
-**Requirements:** Windows 11, an Android phone, the [.NET 10 SDK](https://dotnet.microsoft.com/download),
-and JDK 17 with Android SDK 35+ for the phone app. FFmpeg is needed for the editor and live streaming.
+**You need:** Windows 11, an Android 8.0+ phone, the [.NET 10 SDK](https://dotnet.microsoft.com/download),
+and JDK 17 with Android SDK 35 to build the phone app. [FFmpeg](https://ffmpeg.org/download.html) is
+needed for the editor and live streaming.
 
 ```powershell
 git clone https://github.com/zeeshantanveer/CamStudioPro.git
 cd CamStudioPro
 
-# Windows app -> windows\dist\CamStudioPro\CamStudioPro.exe
-windowsuild.ps1
-
-# Android app -> androidppuild\outputspk\debugpp-debug.apk
-android\gradlew.bat -p android :app:assembleDebug
+windows\build.ps1                                  # Windows app -> windows\dist\CamStudioPro\CamStudioPro.exe
+android\gradlew.bat -p android :app:assembleDebug  # Phone app   -> android\app\build\outputs\apk\debug\app-debug.apk
 ```
 
-Install the APK on your phone, open CamStudio Pro on both devices, and connect by scanning the QR
-code shown on the PC. No phone handy? `windows	oolsake_phone.py` streams a test pattern over
-the real protocol.
+1. Install the APK on your phone and start **CamStudio Pro** on both devices.
+2. Scan the QR code shown on the PC, or plug in a USB cable with USB debugging on.
+3. Your phone camera appears in the app. Record, share your screen or go live.
 
-```
-android/   Phone app (Kotlin, Jetpack Compose, CameraX, MediaCodec H.264)
-windows/   PC client (WPF, .NET 10): live preview, recording, streaming, video/audio editor (FFmpeg)
-docs/      PROTOCOL.md: the phone ↔ PC wire protocol
-```
+No phone handy? `python windows\tools\fake_phone.py` streams a test pattern over the real protocol.
 
-## Contributing
-
-Contributions are welcome: bug reports, features, docs, and testing on more phones. Read
-[CONTRIBUTING.md](CONTRIBUTING.md) to get started. If CamStudio Pro is useful to you, please
-**⭐ star the repo**. It helps other people find it.
+> 📦 **Ready-made installers are coming to [Releases](https://github.com/zeeshantanveer/CamStudioPro/releases).**
+> Click **Watch → Custom → Releases** to be notified.
 
 ## How it works
 
-1. The phone encodes its camera as low-latency H.264 and sends it, plus 48 kHz mic audio, over
-   one TCP connection (port 47801). It finds PCs with a UDP broadcast (port 47800), a QR code
-   shown by the PC, a typed IP address, or USB (`adb reverse`).
-2. The PC client decodes the video with the Media Foundation H.264 decoder.
-3. The PC shows the live preview, records MP4 files, and plays the phone audio into a playback
-   device you pick.
-
-Nothing leaves the local network.
-
-## Microsoft Store installer (MSI)
-
-The selected distribution route is one self-contained x64 MSI that installs the app and native
-virtual camera together. No OBS, separate camera installer, or MSIX custom capability is used.
-Build a local candidate with `windows\build-msi.ps1 -Version 1.2.1`.
-See `windows/packaging/msi/STORE.md` for install/test, publisher signing, and Store hosting.
-The older MSIX route below is retained for reference; its camera activation failed in testing.
-
-## Windows client
-
-Requirements: Windows 11, the .NET 10 SDK to build, and the .NET 10 Desktop Runtime x64 for
-the developer build (the Store package is self-contained).
-
-```powershell
-windows\build-msix.ps1 -Version 1.1.0.0   # Microsoft Store package -> windows\dist\msix\*.msix
-windows\build.ps1                         # developer build -> windows\dist\CamStudioPro\CamStudioPro.exe
+```mermaid
+flowchart LR
+    subgraph Phone["📱 Android phone"]
+        C[CameraX] --> E[MediaCodec<br/>H.264 encoder]
+        M[Mic 48 kHz] --> P
+        E --> P[CamStudio protocol]
+    end
+    P -- "Wi-Fi or USB (TCP 47801)" --> D
+    subgraph PC["🖥️ Windows PC"]
+        D[Media Foundation<br/>decoder] --> S[Scene compositor<br/>screen share · bubble · effects]
+        S --> V[Live preview]
+        S --> R[MP4 recorder]
+        S --> L[RTMP streamer<br/>adaptive bitrate]
+        R --> X[FFmpeg editor]
+    end
+    L --> Y[(YouTube / RTMP)]
 ```
 
-The Store package is self-contained, so users don't need to install .NET for the app.
-`windows/packaging/STORE.md` covers the Partner Center setup, local test installs, certification
-notes, and FFmpeg licensing for a Store build.
+The phone finds the PC by UDP broadcast (port 47800), QR code, typed IP or `adb reverse` over USB.
+The wire protocol is documented in [docs/PROTOCOL.md](docs/PROTOCOL.md).
 
-The app has three pages: **Live** (preview, recording, microphone, beauty), **Editor** and
-**Settings** (theme, startup, phones). The theme follows Windows by default.
-Choose Light or Dark in **Settings › Appearance**.
+| Folder | What's inside |
+|---|---|
+| [`android/`](android) | Phone app: Kotlin, Jetpack Compose, CameraX, MediaCodec |
+| [`windows/`](windows) | PC app: WPF on .NET 10, Media Foundation, FFmpeg, RNNoise |
+| [`docs/`](docs) | [User & developer guide](docs/GUIDE.md), [protocol](docs/PROTOCOL.md), performance notes |
 
-### Share your screen
+## FAQ
 
-While recording or live streaming, click **Share screen** (or Ctrl+Shift+S). The Windows picker lets
-you choose a whole screen or one window; **Entire screen** shares the main display straight away.
+<details>
+<summary><b>Is it really free? Is there a watermark?</b></summary>
 
-- **What viewers see:** the shared screen fills the picture, and your phone camera sits in a round
-  bubble at the bottom right (white ring, soft shadow, size Small / Medium / Large). Click **Stop
-  sharing** to go back to the full-size camera.
-- **Applies everywhere:** the preview, recordings and the live stream all show the same picture.
-- **Switch any time:** sharing can be turned on and off mid-recording or mid-stream. The video size
-  stays the phone's size, so a recording never has to stop for it.
-- **Privacy:** Windows draws its yellow border around whatever is being shared. If the shared window
-  closes, sharing stops on its own.
-- **No phone needed:** without a phone, the screen is shared without the bubble.
+Yes, it's free and MIT licensed. There's no watermark, no account and no time limit.
+</details>
 
-Check: `dotnet run --project windows/tests/ShareSmoke -c Release -p:Platform=x64`. It verifies the
-layout on synthetic images, compose speed, real capture of the main screen (nothing is saved), and a
-recording that switches sharing on and off.
+<details>
+<summary><b>Does my video go to the internet?</b></summary>
 
-### Go live on YouTube
+No. Video and audio go directly from your phone to your PC over your local network or USB cable.
+The only exception is when **you** start a YouTube/RTMP live stream.
+</details>
 
-The Windows app can be the "streaming software" (encoder) YouTube asks for:
-1. In YouTube Studio, choose **Go live › Stream** and copy the **stream key**.
-2. In CamStudio Pro, open **Live › Live stream › Set up**, paste the key and click **Save**.
-   The server is YouTube's (`rtmp://a.rtmp.youtube.com/live2`); any RTMP/RTMPS service works.
-3. Connect the phone and click **Go live**. YouTube Studio shows the preview within a few seconds.
+<details>
+<summary><b>Wi-Fi or USB: which should I use?</b></summary>
 
-- **What goes out:** the phone picture with its beauty and background effects, and the phone mic
-  with voice enhancement. The stream is H.264 + AAC with a keyframe every 2 s; quality is Auto
-  (from the phone's resolution) or a fixed 1080p, 720p or 480p.
-- **Adapts to your upload (Auto):** starts at 720p and moves between 240p and 1080p
-  (0.3–4.5 Mbps). It steps down within seconds when the upload can't keep up, jumping straight to a
-  step that fits about 80% of the measured upload. It steps up slowly: after 60 s without lag it
-  tries one step higher, and after a failed try it waits 2, 4, 8… minutes before trying that step
-  again. Each change reconnects, giving viewers about a 2 s gap; that also drops any backlog, so
-  the stream stays within a few seconds of real time.
-- **Interruptions:** a short network dropout doesn't lower the quality; the stream catches up
-  once data flows again. If the phone disconnects, the stream keeps running with a black picture
-  and silence until it comes back. A broken connection reconnects automatically.
-- **Health logs:** every broadcast writes a per-second CSV (upload, lag, quality, decisions) to
-  `%APPDATA%\CamStudioPro\stream-health\` (the **Logs** link on the Live stream card).
-- **Key storage:** the stream key is encrypted for your Windows account.
-- **Requirements:** FFmpeg, as for the editor.
+USB gives the lowest and steadiest delay (about 60–70 ms at 1080p30 in our tests) and charges the
+phone. Wi-Fi is wireless and works anywhere on the same network.
+</details>
 
-Checks (`windows/tests/LiveStreamSmoke`, each publishes to a local ffmpeg RTMP server unless noted):
-`dotnet run --project windows/tests/LiveStreamSmoke -c Release -p:Platform=x64 -- <mode>` with
-- no mode: basic stream (H.264 1280×720 and AAC 48 kHz arrive);
-- `--judder [--encoder h264_nvenc]`: every frame arrives once, in order;
-- `--policy`: rate-policy simulation of steady, variable, outage, slow and fast links (no ffmpeg);
-- `--trace variable` / `--trace outage`: real publishing through a bandwidth-scheduled proxy;
-- `--stress --uplink 3`: 1080p start on a 3 Mbps uplink stays near real time.
+<details>
+<summary><b>Can I use it in Zoom, Teams or Google Meet?</b></summary>
 
-### Video editor
+The developer build includes a Windows virtual camera ("CamStudio Pro Windows Virtual Camera").
+See [Use the phone camera in Zoom](docs/GUIDE.md#use-the-phone-camera-in-zoom-windows-developer-build).
+</details>
 
-**Editor** is a timeline editor built on FFmpeg:
-- **Media:** import videos, images and music, or **Add recordings**. After a recording,
-  **Edit** opens it straight in the editor.
-- **Clips:** trim by dragging the edges, reorder, split (S), delete (Del), change speed and
-  volume, and add fades and colour (brightness, contrast, saturation).
-- **Titles and music:** a titles track (T) and a music track.
-- **Projects:** undo/redo, and projects save as `*.camproj`.
-- **Export:** MP4 at 1080p, 720p, 4K, vertical 1080×1920 or square. The Automatic encoder
-  uses x264, NVENC, Quick Sync, AMF or the Windows Media Foundation encoder.
+<details>
+<summary><b>Which phones work?</b></summary>
 
-The editor looks for `ffmpeg.exe`/`ffprobe.exe` in `ffmpeg\` next to the app, a folder you
-choose, or `PATH`. Check: `dotnet run --project windows/tests/EditorExportSmoke -c Release -p:Platform=x64`.
+Any Android 8.0+ phone with a working camera should work. Please share your phone model and how
+well it works in [Discussions](https://github.com/zeeshantanveer/CamStudioPro/discussions).
+</details>
 
-Phones reach the app on ports 47801/TCP and 47800/UDP. The Store package declares these firewall
-rules itself. For the developer build, allow CamStudio Pro when Windows Firewall asks.
+<details>
+<summary><b>Is there an iPhone, macOS or Linux version?</b></summary>
 
-USB mode needs `adb.exe`. The client finds it in Android platform-tools (`ANDROID_HOME`, the
-default SDK path, `PATH`, or next to the exe), and USB debugging must be on for the phone.
+Not yet. Those are on the wish list; see the roadmap below. Contributions are very welcome.
+</details>
 
-To record the connected phone, click **Start recording** in the Windows app, then **Stop
-recording** to save an MP4 with video and phone microphone audio. Files are saved automatically
-in your Windows **Videos\CamStudio Pro** folder (including a relocated Videos folder).
-Use **Open recordings folder** to find them. Recording continues while the window is hidden
-in the notification area, and finishes when the phone disconnects or you choose **Quit**.
-Changing the phone's video resolution ends the recording; start another recording afterwards.
-Recordings use the original phone image, without the mirror setting applied.
+## Roadmap
 
-### Beauty effects on Android and Windows
+- [x] 1080p phone camera over Wi-Fi and USB
+- [x] Recording, screen sharing with a camera bubble, video editor
+- [x] YouTube/RTMP live streaming with adaptive bitrate
+- [x] Voice enhancement and beauty touch-up
+- [ ] Ready-made installers and signed APK in Releases
+- [ ] More natural virtual backgrounds (currently beta)
+- [ ] Virtual camera in the Microsoft Store build
+- [ ] Multiple phones and camera switching
+- [ ] Translations
+- [ ] macOS / Linux client
 
-Update **both apps** to use synchronized beauty controls. On Android open **Effects → Beauty**;
-on Windows use the **BEAUTY EFFECTS** card in the right panel. Effects are off by default,
-all sliders start at zero, and settings are saved on the phone. Windows becomes editable
-after the connected phone reports beauty support. Sliders in either app update the same
-phone settings without restarting the video encoder.
+Have an idea? [Open a feature request](https://github.com/zeeshantanveer/CamStudioPro/issues/new/choose).
 
-Available controls: face/jaw slimming, chin length, nose width, nose bridge slimming (the
-upper nose between the eyes) and alar narrowing, nose length, nose root/radix lift, nose tip
-lift, nose contour shading (darker bridge sides, brighter ridge, like makeup), smile lift, eye opening, lip fullness, skin
-smoothing, and skin brightness. Positive width values narrow; positive length/lift values
-lengthen/lift. **Reset beauty** resets just beauty controls and switches the feature off.
-**Hold original** temporarily bypasses beauty on the preview and outgoing stream, including
-recordings; other effects are retained. Android's top-level **Compare** remains a separate,
-preview-only comparison of all image effects.
+## Contributing
 
-Processing runs locally on Android using the existing bundled ML Kit face detector's facial
-contours and OpenGL shaders. The processed image feeds the phone preview, H.264 stream,
-Windows preview and MP4 recorder. The detector uses unwarped frames so
-reshaping does not feed back into tracking. Tracking is smoothed, expires within 750 ms,
-and resets for camera switches, mirroring, output geometry, or rotation changes. Effects
-fade at large head angles and bypass if tracking is lost or the GPU cannot run the shader.
-The status is visible in both apps. These are localized 2D image effects, best with a single
-well-lit, front-facing subject; nose root/tip changes approximate appearance rather than
-reconstructing 3D geometry. Strong settings can distort nearby edges/background, so begin
-with small values. Physical-device frame rate, heat, and tracking quality still need testing
-on the target phone.
+All kinds of contributions are welcome: code, testing on your phone, docs, translations and design.
+Start with [CONTRIBUTING.md](CONTRIBUTING.md), and see the full [user & developer guide](docs/GUIDE.md)
+for build, packaging and test details.
 
-Checks:
+## Star history
 
-```powershell
-android\gradlew.bat -p android :app:testDebugUnitTest
-dotnet run --project windows/tests/BeautyProtocolSmoke -c Release
-python windows/tools/beauty_shader_smoke.py
-```
+<a href="https://star-history.com/#zeeshantanveer/CamStudioPro&Date">
+  <img src="https://api.star-history.com/svg?repos=zeeshantanveer/CamStudioPro&type=Date" alt="Star history chart" width="600">
+</a>
 
-### Realistic background replacement
+## License
 
-On Android open **Effects › Background**. The result goes into the stream and recordings.
+[MIT](LICENSE). CamStudio Pro uses FFmpeg (not bundled), RNNoise, MediaPipe and other open-source
+components; see the `THIRD-PARTY-*` files for their licenses.
 
-- **My room** (most convincing): sit where you stream, tap it, and step out of view during the
-  5 s countdown. The phone averages 8 frames of the empty room into a clean photo with this
-  camera's exact lens, perspective and light. Recapture after moving the phone or if the light
-  changes a lot. Shoot a nicer part of the room by pointing the phone there, then put it back.
-- **Photo** / **Video**: a real photo or a short, steady looping clip of a room (played muted).
-  Daylight office and Reading room use photographic room assets.
-- Realism controls: **Edge detail around hair**, **Light wrap** (background light spilling onto
-  your outline), **Camera grain** (follows the sensor ISO; never a frozen pattern), **Depth of
-  field** (lens blur) and **Match room lighting** (follows the real room's brightness and white
-  balance, including auto-exposure changes).
-
-How it works: person segmentation runs on one ordered streaming worker, up to 30 Hz
-(15 Hz under thermal protection). Android 1.1.2 pairs each accepted mask with its exact
-retained camera frame at resolutions up to 1080p; expired pairs hold the previous composite
-instead of applying a stale outline to a moving body. The model's native mask avoids an
-extra rescale, and uncertain edges receive colour-aware refinement. Confident pixels skip
-that expensive refinement. The model's streaming stabilization replaces the extra temporal
-mask averaging, and subtle light wrap reduces bright halos around hair and shoulders.
-Actual mask throughput depends on the phone; matching adds a short inference delay and
-does not guarantee 30 fps. Thermal protection remains enabled.
-Android 1.1.7 removes the experimental chair subtraction from 1.1.3–1.1.6.
-Live validation showed that chair colour/reference matching could cut into the face,
-clothing and held objects. The working frame/mask synchronization from 1.1.2 remains.
-There is no automatic chair-removal control in 1.1.7. The selfie model can still include
-chair fragments in the person mask; complete chair removal remains unresolved. Further
-segmentation changes need evaluation against real moving-person/chair/held-object footage
-before they are enabled in the live pipeline. Synthetic unit tests alone did not establish
-visual correctness for the failed chair methods.
-Limits: very fast hand movement, objects held in front of you, flyaway hair against a busy wall
-and people walking behind you are still the hardest cases. Best results come with light facing
-you, at least 1 m between you and the real wall, and clothes that differ from the wall colour.
-
-Checks: `android\gradlew.bat -p android :app:testDebugUnitTest` and
-`python windows/tools/background_shader_smoke.py`.
-
-### Real-time voice enhancement
-
-The Windows x64 app enables **Voice enhancement** by default under **PHONE MICROPHONE**.
-RNNoise suppresses background noise, with rumble/hum filtering, gentle presence EQ,
-compression, and a peak limiter. The processed audio feeds both live playback (including a
-virtual cable) and MP4 recording, even when playback is **Off**. Processing runs locally;
-no cloud service or GPU is required.
-
-- **Low / Balanced / Strong** controls suppression strength; start with **Balanced**.
-- **Natural / Broadcast** controls voice presence and compression.
-- **Automatic volume** gently levels speech without boosting silence.
-- Turn **Voice enhancement** off to send the original phone audio through unchanged.
-
-Settings persist across restarts. Enhancement expects the phone protocol's 48 kHz mono
-16-bit PCM. Other formats or an unavailable native library bypass enhancement and show a
-status message. RNNoise adds about one 10 ms frame of algorithmic delay, plus up to 10 ms
-to assemble fragmented input. Changing enhancement settings resets the processor and can
-discard a partial frame. The final partial frame is also discarded when a phone disconnects.
-This processing does not include acoustic echo cancellation or room reverberation removal.
-If voices sound overprocessed, lower suppression in Windows or disable Android's separate
-noise suppression. Place the phone close to the speaker for the best result.
-
-Verification (requires the .NET 10 SDK and Windows x64):
-
-```powershell
-dotnet run --project windows/tests/VoiceEnhancementSmoke -c Release
-dotnet run --project windows/tests/RecordingSmoke -c Release -p:Platform=x64 -- windows/tests/RecordingSmoke/output
-```
-
-### Start automatically and reconnect without asking
-
-- **Windows:** turn on **Start with Windows** (bottom of the right panel). CamStudio Pro then
-  opens in the notification area when you sign in. It is a
-  per-user startup entry (no admin prompt) and can also be turned off in Task Manager › Startup apps.
-- **Android:** **Settings › Connection › Auto-connect to last computer** is on by default. When the
-  app opens, or after the link drops, it keeps looking for the last computer (current Wi-Fi address
-  via discovery, last known address, and USB) and connects as soon as the desktop app is running.
-  While it waits or streams, a notification keeps it working in the background and with the screen
-  off; tap **Stop** there, or on the connect screen, to pause it until you connect again.
-- Auto-connect never triggers the PC's approval dialog: it only gets in if the PC already trusts
-  the phone. If the PC forgot the phone, connect once by hand (or scan the QR code) to trust it again.
-- Android doesn't let apps turn on the camera in the background on their own (for example right
-  after the phone restarts), so open CamStudio on the phone once; after that it finds the computer
-  by itself. On battery, retries can slow down while the phone sleeps; on a charger it keeps checking.
-- For USB, tick **Always allow from this computer** on the phone's "Allow USB debugging?" prompt,
-  otherwise Android asks again each time the cable is plugged in.
-
-Phones that are new to this PC are asked about in an approval dialog. Phones that scan the QR
-code are trusted automatically, because the QR code carries a pairing key. Trusted phones can be
-forgotten from the main window. **New pairing code** invalidates old QR codes.
-
-Testing without a phone: `python windows\tools\fake_phone.py --pair-key <PairKey from
-%APPDATA%\CamStudioPro\settings.json>` streams an ffmpeg test pattern and a tone over the real
-protocol.
-
-## Android app
-
-Build: `android\gradlew.bat :app:assembleDebug` (JDK 17, Android SDK 35+). See
-`android/chairlab/README.md` for the chair-segmentation lab.
-
-## Production builds
-
-**Android** (signed, R8-minified, resources shrunk):
-
-```powershell
-cd android
-$env:JAVA_HOME = "C:\Program Files\Microsoft\jdk-17.0.18.8-hotspot"
-.\gradlew.bat :app:assembleRelease :app:bundleRelease
-```
-
-- Output: `app/build/outputs/apk/release/app-release.apk` (for sideloading) and
-  `app/build/outputs/bundle/release/app-release.aab` (for Google Play).
-- Signing reads `android/keystore.properties` (storeFile, storePassword, keyAlias, keyPassword).
-  In CI, set `CSP_KEYSTORE_FILE`, `CSP_KEYSTORE_PASSWORD`, `CSP_KEY_ALIAS` and `CSP_KEY_PASSWORD`
-  instead. Without a key, the release APK is built unsigned.
-- `android/keystore/` and `keystore.properties` are git-ignored. **Back them up.** Every update
-  must be signed with the same key. With Play App Signing, this key is your upload key.
-- Keep `mapping/release/mapping.txt` from each release so crash stack traces can be deobfuscated.
-  Upload it to Play Console with the AAB.
-- Bump `versionCode` and `versionName` in `android/app/build.gradle.kts` for every release.
-- Set `CSP_BUILD_ROOT=<folder>` to put Gradle output on another drive.
-
-**Windows**: `windows\build.ps1`, then zip `windows\dist\CamStudioPro` (leave out `*.pdb`).
-The exe is not code-signed. Signing it with an Authenticode certificate avoids SmartScreen
-warnings.
-
-## Credits
-
-The editor uses FFmpeg (not bundled; see `windows/packaging/STORE.md`).
-
-### Use the phone camera in Zoom (Windows developer build)
-
-Open **Settings > About > Enable camera for Zoom** and accept Windows' administrator
-prompt for the one-time COM camera registration. Keep CamStudio Pro running, connect
-the phone, fully exit and reopen Zoom, then select **CamStudio Pro Windows Virtual Camera**.
-The virtual camera uses the composed preview, including screen sharing. Paused, missing,
-or stale phone frames become black. The camera disappears when CamStudio Pro exits.
-Re-enable the camera if you move the application folder. Windows 11 is required. The camera source is native and requires no .NET runtime. This registration flow targets unpackaged
-desktop builds; The Store-only camera candidate and its approval and activation requirements are documented in `windows/packaging/STORE.md`.
-
-Protocol check (no administrator rights needed):
-`dotnet run --project windows/tests/VirtualCameraSmoke -c Debug -p:Platform=x64`.
-
-### HD quality and natural backgrounds
-
-In Windows **Live > Video & background**, choose **HD 720p** or **Full HD 1080p**,
-select Original room, soft blur, Daylight office, Reading room, a saved phone photo,
-or My captured room, then **Apply video settings**. This requires the updated Android
-app (1.1.0 / versionCode 2); older phone apps leave desktop controls disabled.
-Changes use 30fps and may briefly restart the encoder. Acknowledgement and errors come
-from the phone; merely connecting never overwrites its current settings.
-
-Natural blending uses lighting matching, modest lens blur, camera grain, and light wrap
-around the subject with the existing edge-aware person mask. The built-in photographic
-style room images are generated assets, replacing the former code-drawn scenes. A real
-empty-room capture matches the phone's perspective best; keep the phone fixed and match
-face illumination to the selected room. Hair, fast movement, poor lighting and segmentation
-limitations can still reveal the replacement. No software can guarantee an indistinguishable
-background in every scene. Preview, recording, stream and virtual camera receive the same
-phone composite; Zoom independently negotiates the virtual-camera output resolution.
-
-### Sharing a broadcast and changing your appearance live
-
-In Live stream > Edit, paste the broadcast's public viewer/watch URL into **Viewer link**.
-For YouTube, copy it from that broadcast's Share action in Studio. RTMP server/key settings
-cannot identify a unique broadcast watch URL; the application does not fabricate one.
-When streaming or reconnecting, the live card shows the saved viewer link with Copy/Open.
-Verify it matches the current broadcast, especially after creating a new YouTube event.
-Ingest URLs, embedded credentials and URLs containing the stream key are rejected.
-Publishing settings are locked while live; the viewer link can still be edited.
-
-With Android 1.1.1+, background/natural-blend changes apply immediately during a broadcast,
-without restarting the encoder or changing capture quality. Apply video quality remains
-explicit and can briefly pause phone video. **Touch up my appearance** and its strength
-slider apply gentle skin smoothing and subtle brightness through the existing phone beauty
-pipeline, preserving other configured beauty controls. All effects feed the live output as
-well as preview/recording/virtual camera. Background and appearance quality still need
-on-device visual verification under the user's lighting.
+<div align="center">
+<br>
+<b>Made with ❤️ for creators, teachers and remote workers.</b><br>
+If this project helps you, <a href="https://github.com/zeeshantanveer/CamStudioPro/stargazers">give it a ⭐</a>. It really helps!
+</div>
