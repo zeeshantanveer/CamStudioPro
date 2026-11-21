@@ -1,0 +1,9 @@
+sh.rnnn — RNNoise speech model "somnolent-hogwash-2018-09-01" (speech in a recording environment:
+fans, AC, computers). Source: https://github.com/GregorR/rnnoise-models
+
+Redistribution: the repository README states: "With the exception of the tools/ directory and this
+file, none of this work is creative and thus none of it is subject to copyright." The model file is
+used, unchanged, with FFmpeg's arnndn filter.
+
+RNNoise itself (the algorithm implemented in FFmpeg's arnndn filter) is by Jean-Marc Valin / Xiph.Org
+under a BSD-3-Clause licence.

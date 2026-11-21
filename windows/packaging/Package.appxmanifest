@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  MSIX manifest for the Microsoft Store. build-msix.ps1 fills the $TOKENS$ from store-identity.json
+  (copy the values from Partner Center › your app › Product management › Product identity).
+-->
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+  xmlns:com4="http://schemas.microsoft.com/appx/manifest/com/windows10/4"
+  xmlns:desktop7="http://schemas.microsoft.com/appx/manifest/desktop/windows10/7"
+  xmlns:uap5="http://schemas.microsoft.com/appx/manifest/uap/windows10/5"
+  xmlns:uap6="http://schemas.microsoft.com/appx/manifest/uap/windows10/6"
+  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+  xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap uap4 uap5 uap6 com4 desktop desktop2 desktop7 rescap">
+
+  <Identity Name="$IDENTITY_NAME$" Publisher="$PUBLISHER$" Version="$VERSION$" ProcessorArchitecture="$ARCH$"/>
+
+  <Properties>
+    <DisplayName>$DISPLAY_NAME$</DisplayName>
+    <PublisherDisplayName>$PUBLISHER_DISPLAY_NAME$</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>Stream your Android phone camera and mic to your PC, record, and edit video and audio.</Description>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22000.0" MaxVersionTested="10.0.26100.0"/>
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="en-us"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="CamStudioPro" Executable="CamStudioPro.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="$DISPLAY_NAME$"
+        Description="Phone camera recorder and video/audio editor"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\Square71x71Logo.png"
+                         Square310x310Logo="Assets\Square310x310Logo.png" ShortName="CamStudio">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo"/>
+            <uap:ShowOn Tile="wide310x150Logo"/>
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+
+      <Extensions>
+        <!-- Windows owns registration, update and removal. Frame Server runs as a service,
+             so user-scoped packaged COM is insufficient. Requires Microsoft approval. -->
+        <com4:Extension Category="windows.comServer" desktop7:CompatMode="classic" desktop7:Scope="machine">
+          <com4:ComServer>
+            <com4:InProcessServer Path="VCam\CamStudio.VCam.Native.dll">
+              <com4:Class Id="3c1f6a52-8e0b-4b7d-9f2a-6d4e8c1b7a35" ThreadingModel="Both" DisplayName="CamStudio Pro camera source"/>
+            </com4:InProcessServer>
+          </com4:ComServer>
+        </com4:Extension>
+        <!-- "Start with Windows". TaskId must match Platform/StartupRegistration.cs. -->
+        <uap5:Extension Category="windows.startupTask">
+          <uap5:StartupTask TaskId="CamStudioProStartup" Enabled="false" DisplayName="CamStudio Pro"/>
+        </uap5:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Extensions>
+    <!-- Phones on the local network reach the app without a firewall prompt (session TCP, discovery UDP). -->
+    <desktop2:Extension Category="windows.firewallRules">
+      <desktop2:FirewallRules Executable="CamStudioPro.exe">
+        <desktop2:Rule Direction="in" IPProtocol="TCP" LocalPortMin="47801" LocalPortMax="47801" Profile="domainAndPrivate"/>
+        <desktop2:Rule Direction="in" IPProtocol="UDP" LocalPortMin="47800" LocalPortMax="47800" Profile="domainAndPrivate"/>
+      </desktop2:FirewallRules>
+    </desktop2:Extension>
+  </Extensions>
+
+  <Capabilities>
+    <!-- Live streaming to YouTube / RTMP servers. -->
+    <Capability Name="internetClient"/>
+    <Capability Name="privateNetworkClientServer"/>
+    <!-- Screen share (Windows.Graphics.Capture with the system picker). -->
+    <uap6:Capability Name="graphicsCapture"/>
+    <!-- Desktop app (WPF). Partner Center asks for a short justification of this restricted capability. -->
+    <rescap:Capability Name="runFullTrust"/>
+    <uap4:CustomCapability Name="Microsoft.classicAppCompat_8wekyb3d8bbwe"/>
+    <uap4:CustomCapability Name="Microsoft.classicAppCompatElevated_8wekyb3d8bbwe"/>
+    <!-- MFCreateVirtualCamera requires webcam capability for packaged callers. -->
+    <DeviceCapability Name="webcam"/>
+  </Capabilities>
+</Package>

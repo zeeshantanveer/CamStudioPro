@@ -1,0 +1,8 @@
+{
+  "_comment": "Copy to store-identity.json (git-ignored) and fill from Partner Center > Product identity. Placeholder values build a local developer package only.",
+  "IdentityName": "CamStudioPro.Dev",
+  "Publisher": "CN=CamStudioPro Dev",
+  "PublisherDisplayName": "CamStudio Pro Developer",
+  "DisplayName": "CamStudio Pro",
+  "PackageFamilyName": ""
+}

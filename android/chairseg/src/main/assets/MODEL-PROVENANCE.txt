@@ -1,0 +1,16 @@
+MediaPipe MagicTouch v2 interactive segmentation, int8, version 1.
+Downloaded 2026-11-18 from the versioned Google model endpoint:
+https://storage.googleapis.com/mediapipe-models/interactive_segmenter_v2/magic_touch/int8/1/interactive_segmentation.task
+SHA256: 38431bc66b883404e8397f74c3579404315b9b52b04a46c6346fe906a7309b03
+SDK: com.google.mediapipe:tasks-vision:1.2.3 (Apache-2.0).
+Publisher guide: https://developers.google.com/edge/mediapipe/solutions/vision/interactive_segmenter
+Publisher-linked MagicTouch model card (Apache-2.0):
+https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MagicTouch.pdf
+Library license: LICENSE-MediaPipe.txt.
+The task bundle contains separate quantized encoder/decoder models. The current guide
+describes v2; the linked model card includes specifications for an earlier model.
+Pinned version and SHA are intentional. Do not substitute the mutable latest endpoint.
+
+Evaluation only: Interactive Segmenter does not track live video. This prototype selects
+a chair on one reference frame and preserves current pixels under that mask in pose tests.
+Camera/chair movement requires a new reference. Output quality must be visually reviewed.

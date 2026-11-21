@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CamStudio.Desktop/CamStudio.Desktop.csproj" />
+    <Project Path="src/CamStudio.Editor/CamStudio.Editor.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/EditorExportSmoke/EditorExportSmoke.csproj" />
+    <Project Path="tests/EditorHarness/EditorHarness.csproj" />
+    <Project Path="tests/LiveStreamSmoke/LiveStreamSmoke.csproj" />
+    <Project Path="tests/ShareSmoke/ShareSmoke.csproj" />
+  </Folder>
+</Solution>

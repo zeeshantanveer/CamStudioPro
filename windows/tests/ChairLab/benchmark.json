@@ -1,0 +1,36 @@
+﻿[
+    {
+        "device":  "SM-A165F",
+        "delegate":  "cpu",
+        "initMs":  364.105846,
+        "firstSetImageMs":  19.308308,
+        "segmentMs":  [
+                          1744.068,
+                          1473.601923,
+                          1266.622154,
+                          1356.068692,
+                          1341.709539
+                      ],
+        "positiveConfidence":  1,
+        "distantWallConfidence":  0,
+        "selectedFraction":  0.017490234375,
+        "fixture":  "Existing AI-generated daylight office; selected plant, not user\u0027s chair"
+    },
+    {
+        "device":  "SM-A165F",
+        "delegate":  "gpu",
+        "initMs":  361.710154,
+        "firstSetImageMs":  15.242461,
+        "segmentMs":  [
+                          4360.553539,
+                          208.404923,
+                          210.469538,
+                          205.045538,
+                          208.193231
+                      ],
+        "positiveConfidence":  1,
+        "distantWallConfidence":  0,
+        "selectedFraction":  0.017149522569444443,
+        "fixture":  "Existing AI-generated daylight office; selected plant, not user\u0027s chair"
+    }
+]

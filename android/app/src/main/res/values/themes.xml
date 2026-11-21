@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ground">#F5F6F8</color>
+    <color name="icon_bg">#181B21</color>
+
+    <!-- Light by default; values-night switches to dark. The in-app Theme setting takes over once the UI is drawn. -->
+    <style name="Theme.CamStudio" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/ground</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

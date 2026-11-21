@@ -1,0 +1,71 @@
+# ---------- Secrets & personal identity (never commit) ----------
+*.jks
+*.keystore
+*.pfx
+*.p12
+*.snk
+*.pem
+*.key
+*.cer
+.env
+.env.*
+android/keystore/
+android/keystore.properties
+android/local.properties
+windows/packaging/store-identity.json
+windows/packaging/CAMERA-APPROVAL.md
+
+# ---------- Build outputs ----------
+bin/
+obj/
+build/
+dist/
+release/
+*.log
+*_wpftmp.csproj
+*.user
+*.suo
+.vs/
+.idea/
+*.iml
+
+# Android / Gradle / Kotlin
+.gradle/
+.kotlin/
+captures/
+*.apk
+*.aab
+
+# Windows packaging tools (restored locally)
+.wix/
+windows/tools/wix/
+
+# Local investigation copies and third-party reference checkouts
+windows/artifacts/
+
+# Test outputs (may contain camera frames, recordings, browser profiles)
+windows/tests/*/output/
+windows/tests/ChairLab/review/
+
+# Python prototype: venv, vendored deps, weights, generated media
+__pycache__/
+*.pyc
+.venv/
+windows/prototypes/chair_tracking/vendor/
+windows/prototypes/chair_tracking/wheels/
+windows/prototypes/chair_tracking/models/
+windows/prototypes/chair_tracking/artifacts/
+*.pt
+*.onnx
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+windows/tests/*/*-output/
+windows/tests/**/*.mp4
+windows/tests/**/*.wav
+windows/tests/**/*.pcm
+*.mov
+*.mkv

@@ -1,0 +1,15 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs" xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+  <Package Name="CamStudio Pro" Manufacturer="Zeeshan Tanveer" Version="$(var.ProductVersion)" UpgradeCode="A8C872DD-5DB0-4BEA-9BAC-B311265346A1" Scope="perMachine" InstallerVersion="500" Compressed="yes">
+    <MajorUpgrade DowngradeErrorMessage="A newer CamStudio Pro is already installed." Schedule="afterInstallInitialize" />
+    <MediaTemplate EmbedCab="yes" />
+    <Property Id="ARPPRODUCTICON" Value="CamStudioPro.ico" />
+    <Icon Id="CamStudioPro.ico" SourceFile="$(var.AppIcon)" />
+    <Property Id="WINDOWSBUILD"><RegistrySearch Id="WindowsBuildSearch" Root="HKLM" Key="SOFTWARE\Microsoft\Windows NT\CurrentVersion" Name="CurrentBuildNumber" Type="raw" Bitness="always64" /></Property>
+    <Launch Condition="Installed OR (VersionNT64 AND WINDOWSBUILD &gt;= 22000)" Message="CamStudio Pro requires Windows 11 (64-bit)." />
+    <StandardDirectory Id="ProgramFiles64Folder"><Directory Id="INSTALLFOLDER" Name="CamStudio Pro" /></StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder" />
+    <ui:WixUI Id="WixUI_Minimal" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.LicenseRtf)" />
+    <Feature Id="Complete" Title="CamStudio Pro" Level="1"><ComponentGroupRef Id="Payload" /></Feature>
+  </Package>
+</Wix>
